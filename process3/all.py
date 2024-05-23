@@ -28,11 +28,11 @@ def compute_cosine_similarity(tensor1, tensor2):
     return tf.reduce_sum(tf.multiply(normalized_tensor1, normalized_tensor2), axis=1)
 
 def compute_similarities(round, counter):
-    f1 = f"/data/jcl/big_batch_520/data_gradients_{round-1}_1.npy"
+    f1 = f"/data/jcl/big_batch_522/data_gradients_{round-1}_1.npy"
 
     data = np.load(f1, allow_pickle=True)
-    g0 = np.load(f"/data/jcl/big_batch_520/model_gradients_{round}_0.npy", allow_pickle=True)
-    g1 = np.load(f"/data/jcl/big_batch_520/model_gradients_{round}_1.npy", allow_pickle=True)
+    g0 = np.load(f"/data/jcl/big_batch_522/model_gradients_{round}_0.npy", allow_pickle=True)
+    g1 = np.load(f"/data/jcl/big_batch_522/model_gradients_{round}_1.npy", allow_pickle=True)
 
     with Pool() as pool:
         flattened_data = pool.map(process_flattened_data, [(i, counter) for i in data])
@@ -55,6 +55,6 @@ if __name__ == "__main__":
     manager = Manager()
     counter = manager.list([0])
     
-    rounds = range(451, 500)
+    rounds = range(2, 401)
     for round in rounds:
         compute_similarities(round, counter)
