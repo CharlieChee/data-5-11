@@ -1,4 +1,4 @@
-attacker_eval_mode: false
+attacker_eval_mode: true
 bn_reg: 0
 boxed: true
 first_bn_multiplier: 1
