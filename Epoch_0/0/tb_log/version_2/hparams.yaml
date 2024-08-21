@@ -10,7 +10,7 @@ image_shape: !!python/object/apply:torch.Size
 l2: 0
 lr: 0.1
 lr_scheduler: true
-num_images: 10
+num_images: 1
 optimizer: Adam
 recipe: Geiping
 signed_gradients: true
