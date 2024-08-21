@@ -1,0 +1,18 @@
+attacker_eval_mode: false
+bn_reg: 0
+boxed: true
+first_bn_multiplier: 1
+image_shape: !!python/object/apply:torch.Size
+- !!python/tuple
+  - 3
+  - 32
+  - 32
+l2: 0
+lr: 0.1
+lr_scheduler: true
+num_images: 1
+optimizer: Adam
+recipe: Geiping
+signed_gradients: true
+signed_image: false
+total_variation: 0.1
